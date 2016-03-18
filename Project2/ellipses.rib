@@ -1,0 +1,44 @@
+##RenderMan RIB
+version 3.03
+
+# declare the variables:
+
+Declare "Ad" "uniform float"
+
+Declare "Bd" "uniform float"
+
+# define the output file:
+
+Display "ovals.tiff" "file" "rgb" 
+Format 512 512 -1
+ShadingRate 1
+
+# define the lighting:
+
+LightSource "ambientlight" 1 "intensity" [0.25]
+LightSource "distantlight" 2 "intensity" [0.75] "from" [5 8 -10] "to" [0 0 0]
+
+# define the rendering parameters:
+
+
+Projection "perspective" "fov" [70]
+
+# define the scene to be rendered:
+
+WorldBegin
+
+	Translate 0 0 6
+	
+	Attribute "bound" "displacement" [1.5]
+
+	Surface "ovals" "Ad" 0.025 "Bd" 0.10 "height" 0.10	
+	
+	Displacement "ovalnoised" "Ad" 0.025 "Bd" 0.10 "height" 0.10				
+
+	Color   [1 1 1]				# specify the Cs color
+	Opacity [1 1 1]				# specify the Os opacity
+	TransformBegin
+		Rotate 90  1. 0. 0.		# rotate so don't see north pole
+		Sphere 3 -3 3 360 		# a full sphere
+	TransformEnd
+WorldEnd
