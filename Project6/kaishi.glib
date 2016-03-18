@@ -1,0 +1,46 @@
+##OpenGL GLIB
+LookAt 1 1 -3  0 0 0  0 1 0
+Perspective 90
+
+Vertex   texture.vert
+Fragment texture.frag
+Program  Texture  TexUnit 6
+
+Texture2D  6  posx.bmp
+QuadYZ 8. 8.
+
+Texture2D  6  negx.bmp
+QuadYZ -8. 8.
+
+
+Texture2D  6  posy.bmp
+QuadXZ 8. 8.
+
+Texture2D  6  negy.bmp
+QuadXZ -8. 8.
+
+
+Texture2D  6  posz.bmp
+QuadXY 8. 8.
+
+Texture2D  6  negz.bmp
+QuadXY -8. 8.
+
+
+
+CubeMap 7 posx.bmp negx.bmp  posy.bmp negy.bmp   posz.bmp negz.bmp
+
+Vertex kaishi.vert
+Fragment kaishi.frag
+Program kaishi \
+		uForce <0. 0. 100.> \
+		uAd <.01 .1 .5> 	 \
+		uBd <.01 .05 .5>      \
+        uNoiseAmp <0. 0. 10.>  	\
+		uNoiseFreq <0. 1. 10.>   \
+		uAlpha <0. 1. 1.> \
+        uTol <0. 0. 1.>                                      
+
+Color 1. .8 0.
+Translate -1. -5 5.
+Obj deer.obj

@@ -1,0 +1,21 @@
+##OpenGL GLIB
+LookAt  0 0 3  0 0 0  0 1 0
+Perspective 70
+
+MessageBox This implements the Alpha extra credit
+MessageBox This implements the ChromaDepth extra credit
+
+Vertex   kaishi.vert
+Fragment kaishi.frag
+Program  kaishi                                               \
+         uAd <.01 .025 .5> 										 \
+		 uBd <.01 .1 .5>                       				 \
+         uNoiseAmp <0. 0. 10.>  									 \
+		 uNoiseFreq <0. 1. 10.>      	                         \
+		 uAlpha <0. 1. 1.>                                        \
+         uTol <0. 0. 1.>                                         \
+         uUseChromaDepth <false>                                  \
+         uChromaBlue <-5.  -3.8  0.>                              \
+         uChromaRed  <-3.  -2.3  2.>		                      
+Color  1  0.5  0.
+Obj Dragon.obj 
