@@ -1,0 +1,68 @@
+##OpenGL GLIB
+
+Perspective 60
+
+LookAt 2 1 -7  0 0 0  0 1 0
+
+Vertex   texture.vert
+Fragment texture.frag
+Program  Texture  TexUnit 6
+
+Texture2D  6  posx.bmp
+QuadYZ 8. 8.
+
+Texture2D  6  negx.bmp
+QuadYZ -8. 8.
+
+
+Texture2D  6  posy.bmp
+QuadXZ 8. 8.
+
+Texture2D  6  negy.bmp
+QuadXZ -8. 8.
+
+
+Texture2D  6  posz.bmp
+QuadXY 8. 8.
+
+Texture2D  6  negz.bmp
+QuadXY -8. 8.
+
+CubeMap 7 posx.bmp negx.bmp  posy.bmp negy.bmp   posz.bmp negz.bmp
+CubeMap 8 posx.bmp negx.bmp  posy.bmp negy.bmp   posz.bmp negz.bmp
+
+Vertex kaishi.vert
+Fragment kaishi.frag
+Program kaishi   \
+	uLightX <-30. 1. 30.>    \
+	uLightY <-30. 28. 30.>    \
+	uLightZ <-30. 3. 30.>    \
+	uKa <0. 0.1 1.0>         \
+	uKd <0. 0.7 1.0>         \
+	uKs <0. 0.2 1.0>         \
+	uDayTime <-40. 1. 40.>   \
+	uForce <0. 0. 100.> \
+	uFogStep <1 100 100>   \
+	uUseBumpmap <false>  \
+	uAng <-3.14159 0.785398 3.14159>	\
+	uBumpDensity <5. 16. 100.>			\
+	uAmbient <0. 0.1 .4>				\
+	uUseReflect <false>  \
+	uUseRefract <false>	 \
+	uReflectUnit 7   \
+	uRefractUnit 8
+
+Color 0.6 0.6 0.6
+Translate -1. -8 5.
+Scale 2. 2. 2.
+Obj Rabbit.obj
+
+Scale 0.2 0.2 0.2
+Translate 1. 28. 3.
+Rotate -180  1 0 0
+Color 1. 0.8 0.
+Sphere 
+
+
+
+
